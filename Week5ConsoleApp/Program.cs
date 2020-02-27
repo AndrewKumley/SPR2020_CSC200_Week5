@@ -8,6 +8,8 @@ namespace Week5ConsoleApp
         {
             SayHello();
             SayGoodbye();
+            SayHelloTo("name");
+            SayGoodbyeTo("name");
         }
 
         public static void SayHello()
@@ -18,6 +20,16 @@ namespace Week5ConsoleApp
         public static void SayGoodbye()
         {
             Console.WriteLine("Goodbye");
+        }
+
+        public static void SayHelloTo(string name)
+        {
+            Console.WriteLine("Hello " + name);
+        }
+
+        public static void SayGoodbyeTo(string name)
+        {
+            Console.WriteLine("Goodbye " + name);
         }
     }
 }
