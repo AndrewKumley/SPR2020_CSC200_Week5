@@ -10,6 +10,7 @@ namespace Week5ConsoleApp
             SayGoodbye();
             SayHelloTo("name");
             SayGoodbyeTo("name");
+            int sum = Sum(237, 583);
         }
 
         public static void SayHello()
@@ -31,5 +32,11 @@ namespace Week5ConsoleApp
         {
             Console.WriteLine("Goodbye " + name);
         }
+
+        public static int Sum(int a, int b)
+        {
+            return a + b;
+        }
+
     }
 }
