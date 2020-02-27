@@ -10,7 +10,12 @@ namespace Week5ConsoleApp
             SayGoodbye();
             SayHelloTo("name");
             SayGoodbyeTo("name");
-            int sum = Sum(237, 583);
+
+            int a = 237;
+            int b = 583;
+            int sum = Sum(a, b);
+            Console.WriteLine("The sum of " + a + " and " + b + " is " + sum + ".");
+            Console.WriteLine(CountSpaces("This is a test."));
         }
 
         public static void SayHello()
@@ -38,5 +43,15 @@ namespace Week5ConsoleApp
             return a + b;
         }
 
+        public static int CountSpaces(string str)
+        {
+            int spaces = 0;
+            for(int i = 0; i < str.Length - 1; i++)
+            {
+                if (str[i].Equals(" ")) spaces++;
+            }
+
+            return spaces;
+        }
     }
 }
