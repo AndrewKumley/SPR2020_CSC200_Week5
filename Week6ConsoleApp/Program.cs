@@ -57,6 +57,23 @@ namespace Week6ConsoleApp
             year = today.Year;
         }
 
+        static void GetCharacterCount(string phrase, out int c, out int num, out int vowels, out int cons)
+        {
+            phrase = phrase.ToLower();
+            c = 0;
+            num = 0;
+            vowels = 0;
+            cons = 0;
+            foreach(char ch in phrase)
+            {
+                c += 1;
+                if (Char.IsDigit(ch)) num += 1;
+                else if ("aeiou".IndexOf(ch) >= 0) vowels += 1;
+                else if (ch.Equals(' ')) continue;
+                else cons++;
+            }
+        }
+
         internal class MyValue
         {
             public int A { get; set; }
