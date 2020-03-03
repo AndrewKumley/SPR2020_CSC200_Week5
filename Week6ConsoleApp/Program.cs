@@ -26,6 +26,11 @@ namespace Week6ConsoleApp
             int month, day, year;
             Extract(DateTime.Today, out month, out day, out year);
             Console.WriteLine("{0}/{1}/{2}\n", month, day, year);
+
+            string phrase = "This is a simple test.";
+            int c, num, vowels, cons;
+            GetCharacterCount(phrase, out c, out num, out vowels, out cons);
+            Console.WriteLine("The phrase '{0}' has {1} characters, {2} numbers, {3} vowels, and {4} consonants.", phrase, c, num, vowels, cons);
         }
 
         static void Zero(out int a)
@@ -69,8 +74,7 @@ namespace Week6ConsoleApp
                 c += 1;
                 if (Char.IsDigit(ch)) num += 1;
                 else if ("aeiou".IndexOf(ch) >= 0) vowels += 1;
-                else if (ch.Equals(' ')) continue;
-                else cons++;
+                else if ("bcdfghjklmnpqrstvwxyz".IndexOf(ch) >= 0) cons += 1;
             }
         }
 
