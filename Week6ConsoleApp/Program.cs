@@ -19,6 +19,18 @@ namespace Week6ConsoleApp
             Console.WriteLine("a = {0}, b = {1}", a, b);
             Swap(ref a, ref b);
             Console.WriteLine("a = {0}, b = {1}\n", a, b);
+
+            Zero(out a);
+            Console.WriteLine("a = {0}\n", a);
+
+            int month, day, year;
+            Extract(DateTime.Today, out month, out day, out year);
+            Console.WriteLine("{0}/{1}/{2}\n", month, day, year);
+        }
+
+        static void Zero(out int a)
+        {
+            a = 0;
         }
 
         static void Foo(MyValue myValue)
@@ -38,7 +50,12 @@ namespace Week6ConsoleApp
             b = temp;
         }
 
-
+        static void Extract(System.DateTime today, out int month, out int day, out int year)
+        {
+            month = today.Month;
+            day = today.Day;
+            year = today.Year;
+        }
 
         internal class MyValue
         {
