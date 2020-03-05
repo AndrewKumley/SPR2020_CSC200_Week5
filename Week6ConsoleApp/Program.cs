@@ -30,7 +30,13 @@ namespace Week6ConsoleApp
             string phrase = "This is a simple test.";
             int c, num, vowels, cons;
             GetCharacterCount(phrase, out c, out num, out vowels, out cons);
-            Console.WriteLine("The phrase '{0}' has {1} characters, {2} numbers, {3} vowels, and {4} consonants.", phrase, c, num, vowels, cons);
+            Console.WriteLine("The phrase '{0}' has {1} characters, {2} numbers, {3} vowels, and {4} consonants.\n", phrase, c, num, vowels, cons);
+
+            int fiveCubed = Power(5, 3);
+            Console.WriteLine("Five cubed is equal to {0}.\n", fiveCubed);
+
+            int fourCubed = Pwr(4, 3);
+            Console.WriteLine("Four cubed is {0}.\n", fourCubed); 
         }
 
         static void Zero(out int a)
@@ -81,6 +87,29 @@ namespace Week6ConsoleApp
         internal class MyValue
         {
             public int A { get; set; }
+        }
+
+        static int Power(int num, int exp)
+        {
+            if (exp == 0) return 1;
+            else if (num == 1 && exp < 0) return 1;
+            else if (exp < 0) return 0;
+
+            int res = num;
+            for(int len = 1; len < exp; len++)
+            {
+                res *= num;
+            }
+            return res;
+        }
+
+        static int Pwr(int num, int exp)
+        {
+            if (exp == 0) return 1;
+            else if (num == 1 && exp < 0) return 1;
+            else if (exp < 0) return 0;
+
+            return num * Pwr(num, exp - 1);
         }
     }
 }
